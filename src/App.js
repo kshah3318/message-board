@@ -5,17 +5,49 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React2</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+     <div>
+       <div id="header"></div>
+       <div className="container">
+        <div className="column">
+            <InboxPane/>
+        </div>
+       </div>
+     </div>
+    );
+  }
+}
+//component of inbox
+class InboxPane extends Component{
+  render(){
+    return(
+      <div id="inbox-pane">
+      <h1>Inbox</h1>
+      <table>
+        <thead>
+         <tr>
+          <th>Chat Received</th>
+          <th>Name</th>
+          <th>Status</th>
+         </tr>
+        </thead>
+        <tbody>
+          <InboxItem/>
+        </tbody>
+      </table>
       </div>
     );
   }
 }
-
+//component of inbox item
+class InboxItem  extends Component{
+  render(){
+    return(
+      <tr>
+        <td>5pm</td>
+        <td>Karan</td>
+        <td>Confirmed</td>
+      </tr>
+    );
+  }
+}
 export default App;
